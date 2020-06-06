@@ -1,6 +1,7 @@
 import './index.css';
+import 'semantic-ui-css/semantic.min.css';
+import './plugins/sentry.plugin';
 
-import * as Sentry from '@sentry/browser';
 import * as serviceWorker from './serviceWorker';
 import * as store from './mobx';
 
@@ -12,8 +13,6 @@ import Routes from './routes';
 import { createBrowserHistory } from 'history';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import { router } from './mobx';
-
-Sentry.init({dsn: process.env.REACT_APP_SENTRY_DSN});
 
 const rootElement = document.getElementById('root');
 const browserHistory = createBrowserHistory()
