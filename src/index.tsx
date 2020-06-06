@@ -13,6 +13,8 @@ import Routes from './routes';
 import { createBrowserHistory } from 'history';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import { router } from './mobx';
+import Loading from './components/loading';
+import './apis/axios.api';
 
 const rootElement = document.getElementById('root');
 const browserHistory = createBrowserHistory()
@@ -21,6 +23,7 @@ const history = syncHistoryWithStore(browserHistory, router);
 ReactDOM.render(
   <React.StrictMode>
     <Provider {...store}>
+      <Loading />
       <Router history={history}>
         <Routes />
       </Router>
