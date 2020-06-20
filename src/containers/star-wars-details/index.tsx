@@ -55,11 +55,13 @@ export default class StarWarsDetails extends React.Component<RouteComponentProps
             <Card.Content>
               <p>Personagens</p>
               <List divided={true} relaxed={true}>
-                {film.characters?.map((character, indexChar) => (
-                  <List.Item key={indexChar}>
-                    {character.name}
-                  </List.Item>
-                ))}
+                {film.characters?.map((character, indexChar) => {
+                  return (
+                    <List.Item key={indexChar}>
+                      {character.name}
+                    </List.Item>
+                  )}
+                )}
               </List>
             </Card.Content>
             <Card.Content>

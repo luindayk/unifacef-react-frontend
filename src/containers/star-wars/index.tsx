@@ -41,15 +41,17 @@ export default class StarWars extends React.Component<Props> {
           </Grid.Row>
         </Grid>
         <Card.Group itemsPerRow={2}>
-          {films.map((film, index) => (
-            <Card key={index} onClick={() => openDetails(film.id)}>
-              <Image src={film.photo} wrapped ui={false} size='small' />
-              <Card.Content>
-                <Card.Meta>{film.title}</Card.Meta>
-                <Card.Description>Episode {film.episode_id.toString()}</Card.Description>
-              </Card.Content>
-            </Card>
-          ))}
+          {films.map((film, index) => {
+            return (
+              <Card key={index} onClick={() => openDetails(film.id)}>
+                <Image src={film.photo} wrapped ui={false} size='small' />
+                <Card.Content>
+                  <Card.Meta>{film.title}</Card.Meta>
+                  <Card.Description>Episode {film.episode_id.toString()}</Card.Description>
+                </Card.Content>
+              </Card>
+            )}
+          )}
         </Card.Group>
       </Container>
     );
