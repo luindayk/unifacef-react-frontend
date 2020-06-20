@@ -12,7 +12,7 @@ interface Props {
 
 @inject('router', 'starWarsDetails')
 @observer
-export default class StarWarsDetails extends React.Component<RouteComponentProps<{id: string }> & Props> {
+export default class StarWarsDetails extends React.Component<RouteComponentProps<{ id: string }> & Props> {
 
   async componentDidMount() {
     const { buildFilmById } = this.props.starWarsDetails;

@@ -13,7 +13,7 @@ interface Props {
 @observer
 export default class MainMenu extends React.Component<Props> {
 
-  handleItemClick = (_, { url }: any) => {
+  handleItemClick = (_: any, { url }: any) => {
     const { setHistory } = this.props.router!;
     return setHistory(url);
   };
