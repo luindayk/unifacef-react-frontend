@@ -1,8 +1,11 @@
 import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 import './plugins/sentry.plugin';
+import './plugins/one-signal.plugin';
+
 import * as serviceWorker from './serviceWorker';
 import * as store from './mobx';
+
 import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
