@@ -4,7 +4,8 @@ export const configs = {
     starWars: process.env.REACT_APP_STAR_WARS_BASEURL,
     correios: process.env.REACT_APP_CEP_URL,
     postmon: process.env.REACT_APP_POSTMON_URL,
-    github: process.env.REACT_APP_GITHUB_URL
+    github: process.env.REACT_APP_GITHUB_URL,
+    corona: process.env.REACT_APP_CORONA_URL
   },
   sentry: process.env.REACT_APP_SENTRY_DSN,
   onesignal: process.env.REACT_APP_ONE_SIGNAL!,

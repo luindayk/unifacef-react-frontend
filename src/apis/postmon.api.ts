@@ -24,7 +24,7 @@ export interface AddressInfo {
 }
 
 export const getAddress = async (cep: number) => {
-  const request = await axios.request({
+  const request = await axios.request<AddressInfo>({
     baseURL,
     url: `cep/${cep}`
   });
