@@ -1,3 +1,4 @@
+import { configs } from '../configs';
 import { configureScope, init } from '@sentry/browser';
 (() => {
 
@@ -6,12 +7,12 @@ import { configureScope, init } from '@sentry/browser';
     return;
   }
 
-  const { REACT_APP_SENTRY_DSN, REACT_APP_VERSION, REACT_APP_NODE_ENV } = process.env;
-  if (!REACT_APP_SENTRY_DSN) {
+  const { sentry } = configs;
+  if (!sentry) {
     return;
   }
 
-  init({ dsn: REACT_APP_SENTRY_DSN, release: REACT_APP_VERSION, environment: REACT_APP_NODE_ENV });
+  init({ dsn: sentry });
   configureScope(scope => {
   });
 

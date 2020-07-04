@@ -1,5 +1,6 @@
+import { configs } from '../configs';
 import axios from 'axios';
 
 export const getPrice = () => {
-  return axios.get('https://economia.awesomeapi.com.br/json/all');
+  return axios.request({ url: configs.apis.economia });
 }
