@@ -50,6 +50,10 @@ export default class CoronaStore {
       }
     });
   }
+
+  @computed get countriesFiltered() {
+    return this.summary?.Countries?.filter((x) => this.countryCode === '' || x.Country === this.countryCode);
+  }
 }
 
 const corona = new CoronaStore();

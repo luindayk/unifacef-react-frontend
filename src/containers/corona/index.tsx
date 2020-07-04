@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import NewRouterStore from "../../mobx/router.store";
 import CoronaStore from "./store";
 import Summary from '../../components/summary';
+import Country from '../../components/country';
 
 interface Props {
   router: NewRouterStore;
@@ -20,7 +21,7 @@ export default class Corona extends React.Component<Props> {
   }
 
   render() {
-    const { summary, countryCode, handleForm, countriesOptions } = this.props.corona;
+    const { summary, countryCode, handleForm, countriesOptions, countriesFiltered } = this.props.corona;
 
     return (
       <Container>
@@ -60,6 +61,12 @@ export default class Corona extends React.Component<Props> {
                 </Form.Field>
               </Form.Group>
             </Form>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Card.Group itemsPerRow={countryCode? 1 : 3}>
+              {countriesFiltered?.map((country, indexContry) => <Country key={indexContry} country={country} />)}
+            </Card.Group>
           </Grid.Row>
         </Grid>
       </Container>
