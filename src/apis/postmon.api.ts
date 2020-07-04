@@ -16,6 +16,7 @@ export interface CidadeInfo {
 
 export interface AddressInfo {
   bairro: string;
+  logradouro?: string;
   cidade: string;
   estado_info: EstadoInfo;
   cep: string;

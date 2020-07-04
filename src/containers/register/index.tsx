@@ -3,8 +3,9 @@ import { Container, Grid, Header, Form } from 'semantic-ui-react';
 import { inject, observer } from 'mobx-react';
 import NewRouterStore from '../../mobx/router.store';
 import RegisterStore from './store';
-import Cep from '../../components/cep';
+// import Cep from '../../components/cep';
 import Github from '../../components/github';
+import Postmon from '../../components/postmon';
 
 interface Props {
   router: NewRouterStore,
@@ -43,7 +44,8 @@ export default class Register extends React.Component<Props> {
                       placeholder='Ex 14408020' />
             </Form.Field>
             <Form.Field>
-              <Cep zipCode={zipcode} />
+              <Postmon zipCode={zipcode} />
+              {/* <Cep zipCode={zipcode} /> */}
             </Form.Field>
           </Form.Group>
           <Form.Group widths='equal' style={{alignItems: 'flex-end'}}>
